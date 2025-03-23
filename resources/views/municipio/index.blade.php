@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-       
+        <a href="{{ route('municipios.create') }}" class="btn btn-success">Agregar Municipio</a>
         <h1>Listado de municipios</h1>
         <table class="table">
             <thead>
