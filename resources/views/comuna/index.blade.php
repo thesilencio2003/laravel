@@ -24,7 +24,7 @@
     </tr>
   </thead>
   <tbody>
-    @foreach
+    @foreach ($comunas as $comuna)
     <tr>
       <th scope="row"> {{ $comuna->comu_codi }}</th>
       <td> {{ $comuna->comu_nomb }}</td>
