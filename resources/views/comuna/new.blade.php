@@ -27,7 +27,7 @@
         </div>
         
         <label for="municipality">Municipality</label>
-        <select name="form-select" id="municipality" name="code" required>
+        <select class="form-select" id="municipality" name="code" required>
             <option selected disabled value="">choose one...</option>
             @foreach ($municipios as $municipio)
             <option value="{{$municipio->muni_codi}}">{{$municipio->muni_nomb}}</option>
