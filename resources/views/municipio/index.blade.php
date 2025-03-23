@@ -16,7 +16,8 @@
             <thead>
                 <tr>
                     <th scope="col">Code</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Municipality</th>
+                    <th scope="col">depart</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -27,6 +28,7 @@
                     <td>{{ $municipio->muni_nomb }}</td>
                     <td>{{ $municipio->depa_nomb }}</td>
                     <td>
+                        <a href="{{route('municipios.edit',['municipio'=>$municipio->muni_codi])}}" class="btn btn-info">Edit</a>
                         <form action="{{ route('municipios.destroy', ['municipio' => $municipio->muni_codi]) }}"
                             method="POST" style="display: inline-block">
                 
