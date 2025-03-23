@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comuna;
 use Illuminate\Http\Request;
-use Illuminate\Http\Comuna;
 use Illuminate\Support\Facades\DB;
 
 class ComunaController extends Controller
@@ -13,11 +13,11 @@ class ComunaController extends Controller
      */
     public function index()
     {
-        $comuna = DB::table('tb_comuna')
+        $comunas = DB::table('tb_comuna')
          ->join('tb_municipio', 'tb_comuna.muni_codi', '=', 'tb_municipio.muni_codi')
          ->select ('tb_comuna.*',"tb_municipio.muni_nomb" )
          ->get();
-         return view('comuna.index', ['comuna'=>$comuna]);
+         return view('comuna.index', ['comunas'=>$comunas]);
         
     }
 
@@ -26,7 +26,10 @@ class ComunaController extends Controller
      */
     public function create()
     {
-        //
+        $municipios = DB::table('tb_municipio')
+        ->orderBy('muni_nomb')
+        ->get();
+        return view('comuna.new', ['municipios'=>$municipios]);
     }
 
     /**
@@ -34,7 +37,16 @@ class ComunaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comuna = new Comuna();
+        $comuna->comu_nomb = $request->name;
+        $comuna->muni_codi = $request->code;
+        $comuna->save();
+
+        $comunas = DB::table('tb_comuna')
+        ->join('tb_municipio', 'tb_comuna.muni_codi', '=', 'tb_municipio.muni_codi')
+        ->select('tb_comuna.*',"tb_municipio.muni_nomb")
+        ->get();
+         return view('comuna.index', ['comunas'=>$comunas]);
     }
 
     /**

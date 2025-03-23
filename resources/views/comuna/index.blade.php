@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container">
-        <a href="{{ route('comuna.create') }}" class="btn btn-success" >add</a>
+        <a href="{{ route('comunas.create') }}" class="btn btn-success" >add</a>
         <h1>Listado de comunas</h1>
         <table class="table">
   <thead>
