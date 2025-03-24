@@ -28,8 +28,8 @@
                       <td>{{ $pais->pais_nomb }}</td>
                       <td>{{ $pais->pais_capi }}</td>
                       <td>
-                        <form action="{{ route('paises.destroy', ['pais' => $pais->pais_codi]) }}" method="POST" style="display: inline-block">
-                
+                        <a href="{{route('paises.edit',['pais'=>$pais->pais_codi])}}" class="btn btn-info">Edit</a>
+                        <form action="{{ route('paises.destroy', ['pais' => $pais->pais_codi]) }}" method="POST" style="display: inline-block">   
                           @method('delete')
                           @csrf
                           <input class="btn btn-danger" type="submit" value="Delete">

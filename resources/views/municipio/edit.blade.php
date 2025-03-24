@@ -1,4 +1,4 @@
-div class="container">
+<div class="container">
      <h1>Edit Municipality</h1>
  
      <form method="POST" action="{{ route('municipios.update', ['municipio' => $municipio->muni_codi]) }}">
