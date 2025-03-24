@@ -10,7 +10,7 @@
   </head>
   <body>
       <div class="container">
-         
+        <a href="{{ route('paises.create') }}" class="btn btn-success">Agregar </a>
           <h1>Listado de paises</h1>
           <table class="table">
               <thead>
