@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\DepartamentoController;
+use App\Http\Controllers\api\PaisController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\ComunaController;
@@ -38,3 +39,8 @@ Route::post('/departamentos', [DepartamentoController::class, 'store'])->name('d
 Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos');
 Route::get('/departamentos/{departamento}', [DepartamentoController::class, 'show'])->name('departamentos.show');
 Route::put('/departamentos/{departamento}', [DepartamentoController::class, 'update'])->name('departamentos.update');
+
+Route::post('/paises', [PaisController::class, 'store'])->name('paises.store');
+Route::get('/paises', [PaisController::class, 'index'])->name('paises');
+Route::get('/paises/{pais}', [PaisController::class, 'show'])->name('paises.show');
+Route::put('/paises/{pais}', [PaisController::class, 'update'])->name('paises.update');
