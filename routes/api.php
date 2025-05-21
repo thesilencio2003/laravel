@@ -37,10 +37,12 @@ Route::put('/municipios/{municipio}', [MunicipioController::class, 'update'])->n
 
 Route::post('/departamentos', [DepartamentoController::class, 'store'])->name('departamentos.store');
 Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos');
+Route::delete('/departamentos/{departamento}', [DepartamentoController::class, 'destroy'])->name('departamentos.destroy');
 Route::get('/departamentos/{departamento}', [DepartamentoController::class, 'show'])->name('departamentos.show');
 Route::put('/departamentos/{departamento}', [DepartamentoController::class, 'update'])->name('departamentos.update');
 
 Route::post('/paises', [PaisController::class, 'store'])->name('paises.store');
 Route::get('/paises', [PaisController::class, 'index'])->name('paises');
+Route::delete('/paises/{pais}', [PaisController::class, 'destroy'])->name('paises.destroy');
 Route::get('/paises/{pais}', [PaisController::class, 'show'])->name('paises.show');
 Route::put('/paises/{pais}', [PaisController::class, 'update'])->name('paises.update');
