@@ -44,7 +44,9 @@ class MunicipioController extends Controller
         $departamentos = DB::table('tb_departamento')
             ->orderBy('depa_nomb')
             ->get();
-        return json_encode(['municipio' => $municipio, 'departamento' => $departamentos]);
+        return json_encode(['municipio' => $municipio, 'departamentos' => $departamentos]);
+
+
     }
 
     /**
@@ -53,11 +55,12 @@ class MunicipioController extends Controller
     public function update(Request $request, string $id)
     {
         $municipio = Municipio::find($id);
-        $municipio->muni_nomb = $request->name;
-        $municipio->depa_codi = $request->code;
+        $municipio->muni_nomb = $request->muni_nomb;
+        $municipio->depa_codi = $request->depa_codi;
         $municipio->save();
 
         return json_encode(['municipio' => $municipio]);
+
     }
 
     /**

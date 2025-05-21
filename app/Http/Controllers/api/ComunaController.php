@@ -29,17 +29,7 @@ class ComunaController extends Controller
     public function store(Request $request)
     {
 
-        $validate = Validator::make($request->all(), [
-            'comu_nomb' => ['required', 'max:30', 'unique'],
-            'muni_codi' => ['required', 'numeric', 'min:1']
-        ]);
-
-        if ($validate->fails()) {
-            return response()->json([
-                'msg' => 'Se produjo un error en la validación de la información.',
-                'statusCode' => 400
-            ]);
-        }
+     
 
         $comuna = new Comuna();
         $comuna->comu_nomb = $request->comu_nomb;
